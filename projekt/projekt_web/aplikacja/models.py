@@ -66,7 +66,7 @@ class Osoba(models.Model):
     nazwisko = models.CharField(max_length = 100, null = False, blank = False)
     plec = models.CharField(max_length = 1, choices = PLEC_WYBOR, default = "I")
     stanowisko = models.ForeignKey('Stanowisko', on_delete = models.CASCADE) 
-
+    data_dodania = models.DateField(auto_now_add = True)
 class Stanowisko(models.Model):
     nazwa = models.CharField(max_length = 70, null = False, blank = False)
     opis = models.TextField(null = True, blank = True)
